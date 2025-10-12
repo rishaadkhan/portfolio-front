@@ -1,0 +1,87 @@
+<section
+  id="skills"
+  class="py-20 px-6 md:px-20 bg-gradient-to-b from-[#00124f] to-[#000c33] text-white"
+>
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Skills</h2>
+    <p class="text-gray-300 text-center mb-12" data-aos="fade-up">Technologies I work with</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Programming -->
+      <div class="space-y-6" data-aos="fade-up">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Programming</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            *ngFor="let skill of skills.programming"
+            class="aspect-square bg-[#00124f]/60 backdrop-blur-md p-4 rounded-none hover:bg-[#001a75]/60 transition group border border-blue-900/30"
+          >
+            <div class="h-full flex flex-col items-center justify-center">
+              <fa-icon
+                [icon]="skill.icon"
+                class="text-4xl mb-3 block group-hover:scale-110 transition text-blue-300"
+              ></fa-icon>
+              <p class="font-medium text-center">{{ skill.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web & Frameworks -->
+      <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Web & Frameworks</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            *ngFor="let skill of skills.webFrameworks"
+            class="aspect-square bg-[#00124f]/60 backdrop-blur-md p-4 rounded-none hover:bg-[#001a75]/60 transition group border border-blue-900/30"
+          >
+            <div class="h-full flex flex-col items-center justify-center">
+              <fa-icon
+                [icon]="skill.icon"
+                class="text-4xl mb-3 block group-hover:scale-110 transition text-blue-300"
+              ></fa-icon>
+              <p class="font-medium text-center">{{ skill.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Database</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            *ngFor="let skill of skills.databases"
+            class="aspect-square bg-[#00124f]/60 backdrop-blur-md p-4 rounded-none hover:bg-[#001a75]/60 transition group border border-blue-900/30"
+          >
+            <div class="h-full flex flex-col items-center justify-center">
+              <fa-icon
+                [icon]="skill.icon"
+                class="text-4xl mb-3 block group-hover:scale-110 transition text-blue-300"
+              ></fa-icon>
+              <p class="font-medium text-center">{{ skill.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Cloud -->
+      <div class="space-y-6" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Tools & Cloud</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            *ngFor="let skill of skills.tools"
+            class="aspect-square bg-[#00124f]/60 backdrop-blur-md p-4 rounded-none hover:bg-[#001a75]/60 transition group border border-blue-900/30"
+          >
+            <div class="h-full flex flex-col items-center justify-center">
+              <fa-icon
+                [icon]="skill.icon"
+                class="text-4xl mb-3 block group-hover:scale-110 transition text-blue-300"
+              ></fa-icon>
+              <p class="font-medium text-center">{{ skill.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

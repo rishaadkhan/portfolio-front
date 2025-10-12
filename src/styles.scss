@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add offset for fixed header */
+html {
+  scroll-padding-top: 5rem; /* Adjust this value based on your header height */
+}
