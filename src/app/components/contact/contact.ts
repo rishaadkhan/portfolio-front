@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -8,11 +8,13 @@ import { environment } from '../../../environments/environment';
   styleUrl: './contact.scss'
 })
 export class Contact {
+  constructor(private cdr: ChangeDetectorRef) {}
   // UI state
   isLoading = false;
   successMessage: string | null = null;
   errorMessage: string | null = null;
   fieldErrors: { [key: string]: string } = {};
+  private messageTimeoutId: any = null;
 
   /**
    * Submit handler: gathers form data and POSTs to Formspree.
@@ -49,19 +51,36 @@ export class Contact {
     formData.append('message', message);
 
     this.isLoading = true;
+    console.debug('[contact] submit: starting, isLoading=true');
+    const timeoutId = setTimeout(() => {
+      if (this.isLoading) {
+        console.warn('[contact] submit: timeout reached — clearing isLoading to avoid infinite loader');
+        this.isLoading = false;
+        this.errorMessage = this.errorMessage || 'Request timed out. Please try again.';
+      }
+    }, 15000);
     try {
+      console.debug('[contact] fetch: sending request to', environment.FORMSPREE_ENDPOINT);
       const resp = await fetch(environment.FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: formData
       });
-
+      console.debug('[contact] fetch: response received, status=', resp.status);
       const data = await resp.json().catch(() => ({}));
+      console.debug('[contact] fetch: parsed body', data);
 
       if (resp.ok) {
+        console.debug('[contact] submit: success branch');
         this.successMessage = 'Thanks — your message was sent.';
         form.reset();
+        // clear any previous message timer and set a new one to auto-hide messages
+        this.clearMessageTimeout();
+        this.setMessageTimeout();
+        // ensure template updates (some runtimes/optimizations may need an explicit CD tick)
+        this.cdr.detectChanges();
       } else {
+        console.debug('[contact] submit: non-ok response');
         // Map Formspree field errors (if any) to fieldErrors
         if (data && Array.isArray(data.errors)) {
           data.errors.forEach((err: any) => {
@@ -69,12 +88,22 @@ export class Contact {
           });
         }
         this.errorMessage = data?.message || 'Sorry — there was a problem sending your message.';
+        this.clearMessageTimeout();
+        this.setMessageTimeout();
+        this.cdr.detectChanges();
       }
     } catch (err) {
-      console.error('Network error', err);
+      console.error('[contact] submit: network error', err);
       this.errorMessage = 'Network error — please try again later.';
+      this.clearMessageTimeout();
+      this.setMessageTimeout();
+      this.cdr.detectChanges();
     } finally {
+      clearTimeout(timeoutId);
       this.isLoading = false;
+      console.debug('[contact] submit: finished, isLoading=false');
+      // force change detection to ensure UI updates immediately
+      this.cdr.detectChanges();
     }
   }
 
@@ -82,6 +111,29 @@ export class Contact {
     this.successMessage = null;
     this.errorMessage = null;
     this.fieldErrors = {};
+    this.clearMessageTimeout();
+  }
+
+  private setMessageTimeout(): void {
+    // hide messages after ~3 seconds
+    this.messageTimeoutId = setTimeout(() => {
+      this.successMessage = null;
+      this.errorMessage = null;
+      this.fieldErrors = {};
+      try {
+        this.cdr.detectChanges();
+      } catch (e) {
+        // ignore
+      }
+      this.messageTimeoutId = null;
+    }, 3000);
+  }
+
+  private clearMessageTimeout(): void {
+    if (this.messageTimeoutId) {
+      clearTimeout(this.messageTimeoutId);
+      this.messageTimeoutId = null;
+    }
   }
 
 }
