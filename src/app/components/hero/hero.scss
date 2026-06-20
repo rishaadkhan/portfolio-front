@@ -1,0 +1,301 @@
+@import "../../../styles/design/tokens";
+
+:host { display: block; }
+
+.hero-section {
+  background: var(--bg);
+  padding: 96px 0 80px;
+  position: relative;
+  overflow: hidden;
+
+  /* subtle radial highlight behind hero */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -80px;
+    width: 600px; height: 500px;
+    background: radial-gradient(ellipse at center,
+      rgba(59, 130, 246, 0.055) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Availability badge ──────────────────────────── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px 5px 8px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6EE7B7;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+
+.badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(16,185,129,0.5);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+  60%  { box-shadow: 0 0 0 5px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+/* ─── Left text ───────────────────────────────────── */
+.hero-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero-name {
+  font-size: 2.9rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.hero-role {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.hero-bio {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin-bottom: 24px;
+}
+
+/* ─── Contact row ─────────────────────────────────── */
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-bottom: 28px;
+
+  span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    fa-icon { color: var(--primary); font-size: 0.72rem; }
+  }
+}
+
+/* ─── CTA buttons ─────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-btn);
+  transition:
+    background var(--anim-normal) var(--ease-out),
+    box-shadow var(--anim-normal) var(--ease-out),
+    transform var(--anim-normal) var(--ease-out);
+
+  svg { transition: transform var(--anim-normal) var(--ease-out); }
+
+  &:hover {
+    background: #2563EB;
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.4), 0 4px 12px rgba(0,0,0,0.3);
+    transform: translateY(-1px);
+    svg { transform: translateX(3px); }
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 7px;
+  text-decoration: none;
+  background: transparent;
+  transition:
+    border-color var(--anim-normal) var(--ease-out),
+    color var(--anim-normal) var(--ease-out),
+    background var(--anim-normal) var(--ease-out),
+    transform var(--anim-normal) var(--ease-out);
+
+  &:hover {
+    border-color: var(--border-hover);
+    color: var(--primary);
+    background: var(--primary-dim);
+    transform: translateY(-1px);
+  }
+}
+
+/* ─── Socials ─────────────────────────────────────── */
+.hero-socials {
+  display: flex;
+  gap: 4px;
+
+  a {
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color var(--anim-normal) var(--ease-out),
+                background var(--anim-normal) var(--ease-out);
+
+    &:hover {
+      color: var(--primary);
+      background: var(--primary-dim);
+    }
+  }
+}
+
+/* ─── Metric Cards ────────────────────────────────── */
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  transition:
+    border-color var(--anim-normal) var(--ease-out),
+    box-shadow    var(--anim-normal) var(--ease-out),
+    transform     var(--anim-normal) var(--ease-out);
+
+  /*
+   * Directional accent stripe: a 2.5px pseudo-element line
+   * painted on a specific edge per grid position.
+   * On hover the full border also lights up (like exp cards),
+   * and the accent stripe becomes fully opaque.
+   */
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity var(--anim-normal) var(--ease-out);
+    pointer-events: none;
+  }
+
+  /* top-left  → accent on top edge */
+  &:nth-child(1)::after { top: -1px; left: 10%; right: 40%; height: 2px; border-radius: 0 0 2px 2px; }
+  /* top-right → accent on right edge */
+  &:nth-child(2)::after { top: 10%; bottom: 40%; right: -1px; width: 2px; border-radius: 2px 0 0 2px; }
+  /* bottom-left  → accent on left edge */
+  &:nth-child(3)::after { top: 40%; bottom: 10%; left: -1px; width: 2px; border-radius: 0 2px 2px 0; }
+  /* bottom-right → accent on bottom edge */
+  &:nth-child(4)::after { bottom: -1px; left: 40%; right: 10%; height: 2px; border-radius: 2px 2px 0 0; }
+
+  &:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+
+    &::after { opacity: 1; }
+  }
+}
+
+.metric-icon {
+  margin-bottom: 6px;
+  display: flex;
+  color: var(--text-muted);
+
+  /* azure icon keeps its own brand colour */
+//   .metric-card--az & { color: inherit; }
+}
+
+.metric-value {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+@media (max-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero-name { font-size: 2.2rem; }
+  .metric-grid { grid-template-columns: repeat(4, 1fr); }
+  .metric-card { padding: 16px 14px; }
+  .metric-value { font-size: 1.2rem; }
+}
+
+@media (max-width: 640px) {
+  .hero-section { padding: 80px 0 64px; }
+  .metric-grid { grid-template-columns: 1fr 1fr; }
+  .hero-name { font-size: 2rem; }
+}

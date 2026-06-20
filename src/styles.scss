@@ -1,11 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import "styles/design/tokens";
+
+/* Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 56px;
 }
 
-/* Add offset for fixed header */
-html {
-  scroll-padding-top: 5rem; /* Adjust this value based on your header height */
+html, body {
+  min-height: 100%;
+  background-color: var(--bg);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ─── Page entrance ──────────────────────────────────────────── */
+.animate-in {
+  animation: fadeUp var(--anim-slow) var(--ease-out) both;
+}
+.delay-1 { animation-delay: 80ms;  }
+.delay-2 { animation-delay: 160ms; }
+.delay-3 { animation-delay: 240ms; }
+.delay-4 { animation-delay: 320ms; }
+.delay-5 { animation-delay: 400ms; }
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--primary-dim);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

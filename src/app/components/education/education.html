@@ -1,77 +1,104 @@
-<section id="education" class="py-20 bg-gradient-to-b from-[#000c33] to-[#00124f] text-white px-6 md:px-20">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
+<section id="education" class="section-wrap">
+  <div class="container">
 
-    <div class="space-y-8 relative">
-      <!-- Timeline Line -->
-      <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-[#001a75] hidden md:block"></div>
+    <div class="section-header">
+      <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+      </svg>
+      <h2 class="section-title">Education &amp; Credentials</h2>
+    </div>
 
-      <!-- Education Block -->
-      <div class="relative flex flex-col md:flex-row items-start md:items-center" data-aos="fade-up" data-aos-delay="0">
-        <div class="w-8 h-8 bg-[#001a75] rounded-full flex-shrink-0 md:mr-8 shadow-lg shadow-[#001a75]/40"></div>
-        <div class="bg-[#001a75]/60 backdrop-blur-md p-6 rounded-xl w-full md:w-4/5 hover:bg-[#002299]/70 transition">
-          <h3 class="text-xl font-semibold">Bachelor of Technology, Computer Science and Engineering</h3>
-          <p class="text-blue-300 text-sm mb-2">Lovely Professional University, Punjab – July 2020 - June 2024</p>
-          <div class="text-gray-300">
-            <p class="mb-2">CGPA: 8.11</p>
-          </div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm">Azure</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm">DSA</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm">Competitive Programming</span>
-          </div>
+    <div class="edu-grid">
+
+      <!-- Degree -->
+      <div class="edu-card" data-aos="fade-up">
+        <p class="edu-type">DEGREE</p>
+        <h3 class="edu-title">B.Tech — Computer Science &amp; Engineering</h3>
+        <p class="edu-meta">Lovely Professional University, Punjab</p>
+        <p class="edu-meta edu-meta--muted">July 2020 – June 2024 · CGPA: 8.11</p>
+        <div class="edu-tags">
+          <span>DSA</span><span>Competitive Programming</span><span>Azure</span>
         </div>
       </div>
 
-      <!-- Achievements Block -->
-      <div class="relative flex flex-col md:flex-row items-start md:items-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-8 h-8 bg-[#001a75] rounded-full flex-shrink-0 md:mr-8 shadow-lg shadow-[#001a75]/40"></div>
-        <div class="bg-[#001a75]/60 backdrop-blur-md p-6 rounded-xl w-full md:w-4/5 hover:bg-[#002299]/70 transition">
-          <h3 class="text-xl font-semibold">Achievements</h3>
-          <div class="text-gray-300 mt-2">
-            <ul class="list-disc list-inside space-y-2">
-              <li>Secured 1st place in a hackathon with a team of four</li>
-              <li>Ranked 4995 out of 40k+ students on GeeksforGeeks (Rating: 1678, 3 stars)</li>
-              <li>LeetCode rating of 1570 with top contest rank of 5000 among 35k+ participants</li>
-              <li>Solved 700+ DSA problems across various coding platforms</li>
-              <li>Ranked 13th nationally, 2nd at district, and 1st at school in National Cyber Olympiad 2019</li>
-            </ul>
-          </div>
-        </div>
+      <!-- Certifications -->
+      <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
+        <p class="edu-type">CERTIFICATIONS</p>
+        <ul class="cert-list">
+
+          <!-- AZ-900: Azure chevron mark -->
+          <li class="cert-item">
+            <span class="cert-icon cert-icon--azure">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.2 1.5L16.5 14.5H1.9L9.2 1.5Z" fill="#0078D4"/>
+                <path d="M5.8 1.5L1 10.5l1.9 4L9.2 1.5H5.8Z" fill="#0078D4" opacity="0.55"/>
+              </svg>
+            </span>
+            <div>
+              <span class="cert-name">Azure Fundamentals — AZ-900</span>
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/KhanRishaad-8588/775D4D10ED97C8FD?sharingId=214C555B34AF1B0F" target="_blank" rel="noopener" class="cert-link">Verify ↗</a>
+            </div>
+          </li>
+
+          <!-- AZ-204: Azure chevron mark (same family) -->
+          <li class="cert-item">
+            <span class="cert-icon cert-icon--azure">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.2 1.5L16.5 14.5H1.9L9.2 1.5Z" fill="#0078D4"/>
+                <path d="M5.8 1.5L1 10.5l1.9 4L9.2 1.5H5.8Z" fill="#0078D4" opacity="0.55"/>
+              </svg>
+            </span>
+            <div>
+              <span class="cert-name">Azure Developer Associate — AZ-204</span>
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/KhanRishaad-8588/F485E16D5ED1E68D?sharingId=214C555B34AF1B0F" target="_blank" rel="noopener" class="cert-link">Verify ↗</a>
+            </div>
+          </li>
+
+          <!-- Google Cloud: GCP multi-coloured hexagon mark, muted -->
+          <li class="cert-item">
+            <span class="cert-icon cert-icon--gcp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L4 7v10l8 5 8-5V7L12 2Z" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M12 8v4l3 2" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <span class="cert-name">Generative AI Leader — Google Cloud</span>
+              <a href="https://www.credly.com/badges/082cba57-8b30-4a61-8273-a505785d425c/public_url" target="_blank" rel="noopener" class="cert-link">Verify ↗</a>
+            </div>
+          </li>
+
+          <!-- Agile: sprint/iteration arrows -->
+          <li class="cert-item">
+            <span class="cert-icon cert-icon--agile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12a9 9 0 019-9 9.75 9.75 0 016.74 2.74L21 8"/>
+                <path d="M21 3v5h-5"/>
+                <path d="M21 12a9 9 0 01-9 9 9.75 9.75 0 01-6.74-2.74L3 16"/>
+                <path d="M3 21v-5h5"/>
+              </svg>
+            </span>
+            <div>
+              <span class="cert-name">Agile Software Development — U of Minnesota</span>
+              <a href="https://coursera.org/share/7bd4aba4e85a61d5c5c6a9675b3483eb" target="_blank" rel="noopener" class="cert-link">Verify ↗</a>
+            </div>
+          </li>
+
+        </ul>
       </div>
 
-      <!-- Certifications Block -->
-      <div class="relative flex flex-col md:flex-row items-start md:items-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-8 h-8 bg-[#001a75] rounded-full flex-shrink-0 md:mr-8 shadow-lg shadow-[#001a75]/40"></div>
-        <div class="bg-[#001a75]/60 backdrop-blur-md p-6 rounded-xl w-full md:w-4/5 hover:bg-[#002299]/70 transition">
-          <h3 class="text-xl font-semibold">Certifications</h3>
-          <div class="text-gray-300 mt-2">
-                <ul class="list-disc list-inside space-y-2">
-                  <li>
-                    Microsoft Certified: Azure Fundamentals (AZ-900)
-                    —
-                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/KhanRishaad-8588/775D4D10ED97C8FD?sharingId=214C555B34AF1B0F" target="_blank" rel="noopener" class="text-blue-300 hover:underline inline-flex items-center gap-1">
-                      Verify
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    Microsoft Certified: Azure Developer Associate (AZ-204)
-                    —
-                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/KhanRishaad-8588/F485E16D5ED1E68D?sharingId=214C555B34AF1B0F" target="_blank" rel="noopener" class="text-blue-300 hover:underline inline-flex items-center gap-1">
-                      Verify
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
-                      </svg>
-                    </a>
-                  </li>
-              <!-- Add more certifications here with verification links as needed -->
-            </ul>
-          </div>
-        </div>
+      <!-- Achievements -->
+      <div class="edu-card" data-aos="fade-up" data-aos-delay="200">
+        <p class="edu-type">ACHIEVEMENTS</p>
+        <ul class="ach-list">
+          <li>1st place — University hackathon (team of 4)</li>
+          <li>GeeksforGeeks rank 4995 / 40k+ · Rating 1678 · 3 stars</li>
+          <li>LeetCode rating 1570 · Top contest rank 5000 / 35k+</li>
+          <li>900+ DSA problems solved across platforms</li>
+          <li>National Cyber Olympiad 2019 — Rank 13 nationally, 1st at school</li>
+        </ul>
       </div>
+
     </div>
   </div>
 </section>

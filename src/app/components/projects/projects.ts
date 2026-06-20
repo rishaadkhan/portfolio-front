@@ -20,12 +20,28 @@ interface Project {
 export class Projects {
   projects: Project[] = [
     {
+      title: 'ShowNight',
+      description: 'Developed an enterprise-grade movie reservation API using Spring Boot, PostgreSQL, Redis, JWT, RBAC, and Liquibase for schema versioning.',
+      image: 'assets/projects/shownight.jpg',
+      technologies: ['Spring Boot', 'PostgreSQL', 'Redis', 'JWT', 'RBAC'],
+      projectUrl: '#',
+      delay: 0
+    },
+    {
+      title: '1xCar',
+      description: 'Built a full-stack car dealership and bidding platform with Spring Boot, Angular, MySQL, JWT authentication, and admin/user role workflows.',
+      image: 'assets/projects/1xcar.jpg',
+      technologies: ['Spring Boot', 'Angular', 'MySQL', 'JWT', 'RBAC'],
+      projectUrl: '#',
+      delay: 100
+    },
+    {
       title: 'T-Shirt Store',
       description: 'Full-featured e-commerce platform with product browsing, cart management, and secure Stripe payments. Includes admin dashboard for inventory management.',
       image: 'assets/projects/tshirt-store.jpg',
       technologies: ['MERN Stack', 'Stripe', 'Redux'],
       projectUrl: '#',
-      delay: 0
+      delay: 200
     },
     {
       title: 'Face Recognition System',
@@ -33,7 +49,7 @@ export class Projects {
       image: 'assets/projects/face-recognition.jpg',
       technologies: ['Python', 'OpenCV', 'ML'],
       projectUrl: '#',
-      delay: 100
+      delay: 300
     },
     {
       title: 'Point of Sale System',
@@ -41,7 +57,7 @@ export class Projects {
       image: 'assets/projects/pos-system.jpg',
       technologies: ['Laravel 10', 'MySQL', 'REST API'],
       projectUrl: '#',
-      delay: 200
+      delay: 400
     }
   ];
 }

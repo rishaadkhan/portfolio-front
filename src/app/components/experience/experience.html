@@ -1,55 +1,74 @@
-<section id="experience" class="py-20 bg-gradient-to-b from-[#00124f] to-[#000c33] text-white px-6 md:px-20">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
+<section id="experience" class="section-wrap">
+  <div class="container">
 
-    <div class="space-y-8 relative">
-      <!-- Timeline Line -->
-      <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-[#001a75] hidden md:block"></div>
+    <div class="section-header">
+      <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/>
+      </svg>
+      <h2 class="section-title">Experience</h2>
+    </div>
 
-      <!-- Experience: Capgemini (Client work) -->
-      <div class="relative flex flex-col md:flex-row items-start md:items-center" data-aos="fade-up" data-aos-delay="0">
-        <div class="w-8 h-8 bg-[#001a75] rounded-full flex-shrink-0 md:mr-8 shadow-lg shadow-[#001a75]/40"></div>
-        <div class="bg-[#001a75]/60 backdrop-blur-md p-6 rounded-xl w-full md:w-4/5 hover:bg-[#002299]/70 transition">
-          <h3 class="text-xl font-semibold">Software Engineer (Java Full Stack Developer) — Capgemini</h3>
-          <p class="text-blue-300 text-sm mb-2">Sep 2024 – Present</p>
-          <ul class="text-gray-300 list-disc list-inside space-y-2">
-            <li>Worked for client TotalEnergies, contributing to the design, enhancement, and optimization of enterprise-grade web applications.</li>
-            <li>Developed and maintained scalable modules using Java, Spring Boot, Angular, and MySQL, following Agile methodologies and coding best practices.</li>
-            <li>Collaborated with cross-functional teams on requirement analysis, unit testing, deployment, and cloud integration using Azure DevOps.</li>
-          </ul>
-          <div class="mt-3">
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Java</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Spring Boot</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Angular</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">MySQL</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Azure DevOps</span>
+    <div class="exp-list">
+
+      <!-- Capgemini — Client Work -->
+      <div class="exp-card" data-aos="fade-up">
+        <div class="exp-header">
+          <div class="exp-company-wrap">
+            <div class="exp-company-logo">
+              <!-- Capgemini brand mark: open-C arc, monochrome on dark -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.5 8C17.8 5.4 14.9 3.75 11.6 3.75C6.3 3.75 2 8.05 2 13.35S6.3 22.95 11.6 22.95c3.3 0 6.2-1.65 7.9-4.25" stroke="#60A5FA" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="exp-role">Software Engineer — Java Full Stack Developer</h3>
+              <p class="exp-company-name">Capgemini</p>
+            </div>
           </div>
+          <div class="exp-date-wrap">
+            <span class="exp-badge">Current</span>
+            <span class="exp-date">Sep 2024 – Present</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed and implemented backend features using <strong>Java, Spring Boot, JPA, and MySQL</strong> with TDD — focused on modular design and performance optimization.</li>
+          <li>Identified and remediated <strong>400+ critical and high-severity security vulnerabilities</strong> across enterprise applications via framework upgrades and secure configuration fixes.</li>
+          <li>Performed complete module rewrite and integrated <strong>Microsoft Entra ID authentication</strong> to meet enterprise compliance standards.</li>
+          <li>Leveraged GitHub Copilot and ChatGPT for controlled debugging, test generation, and refactoring under tight SLAs.</li>
+        </ul>
+        <div class="exp-tags">
+          <span>Java</span><span>Spring Boot</span><span>JPA</span><span>MySQL</span>
+          <span>Azure</span><span>Microsoft Entra ID</span><span>TDD</span><span>Security</span>
         </div>
       </div>
 
-      <!-- Experience: Capgemini - Internal Projects -->
-      <div class="relative flex flex-col md:flex-row items-start md:items-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-8 h-8 bg-[#001a75] rounded-full flex-shrink-0 md:mr-8 shadow-lg shadow-[#001a75]/40"></div>
-        <div class="bg-[#001a75]/60 backdrop-blur-md p-6 rounded-xl w-full md:w-4/5 hover:bg-[#002299]/70 transition">
-          <h3 class="text-xl font-semibold">Capgemini — Internal Projects (Full Stack Developer Trainee)</h3>
-          <p class="text-blue-300 text-sm mb-2">Trainee Projects</p>
-          <ul class="text-gray-300 list-disc list-inside space-y-2">
-            <li>
-              <strong>CropDeal:</strong> Built a full-stack agriculture trading platform using Angular, Spring Boot, and MySQL. Implemented secure JWT authentication, payment gateway integration, and role-based dashboards. Deployed on Azure Cloud ensuring high availability and performance.
-            </li>
-            <li>
-              <strong>Energy Dashboard:</strong> Developed a cloud-based analytics system to track solar energy production and consumption. Built REST APIs and visualized real-time metrics using ngChart and Spring Boot microservices.
-            </li>
-          </ul>
-          <div class="mt-3">
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Angular</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Spring Boot</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">JWT</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">ngChart</span>
-            <span class="inline-block bg-[#00124f]/50 text-blue-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">Azure</span>
+      <!-- Capgemini — Trainee Projects -->
+      <div class="exp-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="exp-header">
+          <div class="exp-company-wrap">
+            <div class="exp-company-logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.5 8C17.8 5.4 14.9 3.75 11.6 3.75C6.3 3.75 2 8.05 2 13.35S6.3 22.95 11.6 22.95c3.3 0 6.2-1.65 7.9-4.25" stroke="#60A5FA" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="exp-role">Full Stack Developer Trainee</h3>
+              <p class="exp-company-name">Capgemini — Internal Projects</p>
+            </div>
+          </div>
+          <div class="exp-date-wrap">
+            <span class="exp-date">2023 – 2024</span>
           </div>
         </div>
+        <ul class="exp-bullets">
+          <li><strong>CropDeal:</strong> Full-stack agriculture trading platform with Angular, Spring Boot, MySQL. Implemented JWT auth, payment gateway integration, role-based dashboards, deployed on Azure.</li>
+          <li><strong>Energy Dashboard:</strong> Cloud-based analytics system tracking solar energy metrics. Built REST APIs and real-time visualizations with Spring Boot microservices and ngChart.</li>
+        </ul>
+        <div class="exp-tags">
+          <span>Angular</span><span>Spring Boot</span><span>MySQL</span><span>JWT</span><span>ngChart</span><span>Azure</span>
+        </div>
       </div>
+
     </div>
   </div>
 </section>

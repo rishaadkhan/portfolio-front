@@ -1,22 +1,25 @@
-<header class="fixed w-full top-0 left-0 bg-[#00124f]/40 backdrop-blur-md z-50 py-4">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
-    <a (click)="scrollToSection('hero')" class="text-xl font-bold text-white hover:text-blue-300 transition cursor-pointer">Rishaad Khan</a>
-    <nav class="space-x-4 hidden md:flex font-medium text-white">
-      <a (click)="scrollToSection('about')" class="hover:text-blue-300 transition cursor-pointer">About</a>
-      <a (click)="scrollToSection('experience')" class="hover:text-blue-300 transition cursor-pointer">Experience</a>
-      <a (click)="scrollToSection('education')" class="hover:text-blue-300 transition cursor-pointer">Education</a>
-      <a (click)="scrollToSection('skills')" class="hover:text-blue-300 transition cursor-pointer">Skills</a>
-      <a (click)="scrollToSection('projects')" class="hover:text-blue-300 transition cursor-pointer">Projects</a>
-      <a (click)="scrollToSection('services')" class="hover:text-blue-300 transition cursor-pointer">Services</a>
-      <a (click)="scrollToSection('contact')" class="hover:text-blue-300 transition cursor-pointer">Contact</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a (click)="scrollToSection('hero')" class="header-logo">
+      <span class="logo-dot"></span>
+      Rishaad Khan
+    </a>
+
+    <nav class="header-nav">
+      <a (click)="scrollToSection('about')"      class="nav-link">About</a>
+      <a (click)="scrollToSection('experience')" class="nav-link">Experience</a>
+      <a (click)="scrollToSection('education')"  class="nav-link">Education</a>
+      <a (click)="scrollToSection('skills')"     class="nav-link">Skills</a>
+      <a (click)="scrollToSection('projects')"   class="nav-link">Projects</a>
+      <a (click)="scrollToSection('services')"   class="nav-link">Services</a>
+      <a (click)="scrollToSection('contact')"    class="nav-link">Contact</a>
     </nav>
-    <div class="flex items-center space-x-4">
-      <a href="https://drive.google.com/file/d/1iUp60-5x5OyNWQm0PZagCqsmy7EsaWE1/view?usp=drive_link" target="_blank" download class="px-4 py-2 bg-[#001a75] hover:bg-[#002299] rounded-full text-white font-semibold transition flex items-center">
-        <span>Resume</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </a>
-    </div>
+
+    <a href="/RishaadResume.pdf" target="_blank" download class="header-resume">
+      Resume
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </a>
   </div>
 </header>

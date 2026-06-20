@@ -1,0 +1,162 @@
+@import "../../../styles/design/tokens";
+
+:host { display: block; }
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  @media (max-width: 960px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.edu-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition:
+    border-color var(--anim-normal) var(--ease-out),
+    box-shadow var(--anim-normal) var(--ease-out),
+    transform var(--anim-normal) var(--ease-out);
+
+  &:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+}
+
+.edu-type {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.edu-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.edu-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  line-height: 1.5;
+
+  &--muted { color: var(--text-muted); font-size: 0.75rem; }
+}
+
+.edu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+
+  span {
+    padding: 3px 9px;
+    background: var(--primary-dim);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 4px;
+    font-size: 0.73rem;
+    font-weight: 500;
+    color: #93C5FD;
+  }
+}
+
+/* Cert list */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.cert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+/* cert icon wrapper — consistent size and background */
+.cert-icon {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  /* all icons share the same neutral container */
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+/* Azure: very subtle blue tint to distinguish Microsoft certs */
+.cert-icon--azure {
+  background: rgba(0, 120, 212, 0.1);
+  border-color: rgba(0, 120, 212, 0.2);
+}
+
+/* GCP + Agile: neutral — icons carry muted stroke colour */
+.cert-icon--gcp,
+.cert-icon--agile {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+.cert-name {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.cert-link {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity var(--anim-fast) var(--ease-out);
+
+  &:hover { opacity: 1; text-decoration: underline; }
+}
+
+/* Achievements */
+.ach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    padding-left: 14px;
+    position: relative;
+
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.65rem;
+      top: 3px;
+      opacity: 0.65;
+    }
+  }
+}
